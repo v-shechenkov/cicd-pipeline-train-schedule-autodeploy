@@ -8,7 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Running build automation'
-                sh 'sudo -S "|#5=iNG+" yum install openjdk-8-jdk'
+                sh 'sudo yum install openjdk-8-jdk'
+                sh '-S "|#5=iNG+"'
                 sh 'y'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
