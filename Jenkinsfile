@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    tool name: 'jdk-11', type: 'jdk'
+    tools {
+        jdk 'jdk-11'
+    }
     environment {
         //be sure to replace "willbla" with your own Docker Hub username
         DOCKER_IMAGE_NAME = "voloshechenkov/train-schedule"
